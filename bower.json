@@ -1,0 +1,16 @@
+{
+  "name": "cjam5-app",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "typekit-load": "~0.1.2",
+    "FitText.js": "~1.2.0",
+    "countUp.js": "~1.5.3",
+    "fontawesome": "~4.4.0",
+    "mailcheck": "~1.1.1"
+  },
+  "devDependencies": {
+    "chai": "~3.2.0",
+    "mocha": "~2.2.5"
+  }
+}
