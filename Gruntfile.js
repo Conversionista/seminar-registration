@@ -56,7 +56,23 @@ module.exports = function (grunt) {
         tasks: ['newer:copy:styles', 'postcss']
       }
     },
-
+    
+    //Auto deploy to github pages on build
+    buildcontrol: {
+      options: {
+        dir: 'dist',
+        commit: true,
+        push: true,
+        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+      },
+      pages: {
+        options: {
+          remote: 'git@github.com:Conversionista/seminar-registration.git',
+          branch: 'gh-pages'
+        }
+      }
+    
+    },
     browserSync: {
       options: {
         notify: false,
@@ -415,6 +431,22 @@ module.exports = function (grunt) {
     'filerev',
     'usemin',
     'htmlmin'
+  ]);
+
+  grunt.registerTask('build', [
+    'clean:dist',
+    'wiredep',
+    'useminPrepare',
+    'concurrent:dist',
+    'postcss',
+    'concat',
+    'cssmin',
+    'uglify',
+    'copy:dist',
+    'filerev',
+    'usemin',
+    'htmlmin',
+    'buildcontrol'
   ]);
 
   grunt.registerTask('default', [
