@@ -433,7 +433,7 @@ module.exports = function (grunt) {
     'htmlmin'
   ]);
 
-  grunt.registerTask('build', [
+  grunt.registerTask('deploy', [
     'clean:dist',
     'wiredep',
     'useminPrepare',
