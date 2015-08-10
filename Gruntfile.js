@@ -58,7 +58,12 @@ module.exports = function (grunt) {
         tasks: ['newer:copy:styles', 'postcss']
       }
     },
+<<<<<<< HEAD
         //Auto deploy to github pages on build
+=======
+    
+    //Auto deploy to github pages on build
+>>>>>>> origin/master
     buildcontrol: {
       options: {
         dir: 'dist',
@@ -74,7 +79,10 @@ module.exports = function (grunt) {
       }
     
     },
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     browserSync: {
       options: {
         notify: false,
@@ -436,6 +444,22 @@ module.exports = function (grunt) {
   ]);
   
   grunt.registerTask('deploy', [
+    'buildcontrol'
+  ]);
+
+  grunt.registerTask('deploy', [
+    'clean:dist',
+    'wiredep',
+    'useminPrepare',
+    'concurrent:dist',
+    'postcss',
+    'concat',
+    'cssmin',
+    'uglify',
+    'copy:dist',
+    'filerev',
+    'usemin',
+    'htmlmin',
     'buildcontrol'
   ]);
 
