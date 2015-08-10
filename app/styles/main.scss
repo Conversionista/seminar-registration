@@ -168,3 +168,8 @@ small {
   -webkit-animation-name: rubberBand;
   animation-name: rubberBand;
 }
+
+/* Loader */
+.ui-icon-loading {
+  background: url("../images/ajax-loader.gif");
+}
