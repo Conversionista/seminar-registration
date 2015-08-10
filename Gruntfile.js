@@ -13,6 +13,8 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
+  grunt.loadNpmTasks('grunt-build-control');
+
   // Automatically load required grunt tasks
   require('jit-grunt')(grunt, {
       useminPrepare: 'grunt-usemin'
@@ -55,6 +57,22 @@ module.exports = function (grunt) {
         files: ['<%= config.app %>/styles/{,*/}*.css'],
         tasks: ['newer:copy:styles', 'postcss']
       }
+    },
+        //Auto deploy to github pages on build
+    buildcontrol: {
+      options: {
+        dir: 'dist',
+        commit: true,
+        push: true,
+        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+      },
+      pages: {
+        options: {
+          remote: 'git@github.com:Conversionista/seminar-registration.git',
+          branch: 'gh-pages'
+        }
+      }
+    
     },
 
     browserSync: {
@@ -415,6 +433,10 @@ module.exports = function (grunt) {
     'filerev',
     'usemin',
     'htmlmin'
+  ]);
+  
+  grunt.registerTask('deploy', [
+    'buildcontrol'
   ]);
 
   grunt.registerTask('default', [
