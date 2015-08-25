@@ -244,11 +244,13 @@ function checkForm(){
 		    if ($(this).is(':checked')) {
 		        
 		        if (validateEmail( $(emailField).val() ) === true) {
-		        	// console.log('unlocked');
+		        	console.log('unlocked');
 		        	toggleButton(true);
 
 		        }
 
+		    } else {
+				toggleButton(false);		    	
 		    }
 		}
 
