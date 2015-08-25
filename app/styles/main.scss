@@ -171,5 +171,9 @@ small {
 
 /* Loader */
 .ui-icon-loading {
-  background: url("../images/ajax-loader.gif");
+  background: url("../images/ajax-loader.gif")!important;
+}
+
+small {
+  text-transform: uppercase;
 }

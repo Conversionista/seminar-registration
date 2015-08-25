@@ -198,6 +198,13 @@ $(document).on('pageshow','#main',function(){ // When entering main
 
 });
 
+$(document).on('pageshow','#tack',function(){ // When entering main
+	setTimeout(function(){
+		$.mobile.changePage('#main');
+	}, 5000);
+
+});
+
 
 $('#post').click(function () {
 
