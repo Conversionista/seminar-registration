@@ -233,4 +233,25 @@ $( document ).ready(function() {
 	$(emailField).attr('placeholder', rand);
 	getEntries();
 	toggleButton(false);
+	checkForm();
 });
+
+function checkForm(){
+	
+	$('input:checkbox').change(
+		
+		function(){
+		    if ($(this).is(':checked')) {
+		        
+		        if (validateEmail( $(emailField).val() ) === true) {
+		        	// console.log('unlocked');
+		        	toggleButton(true);
+
+		        }
+
+		    }
+		}
+
+	);
+
+}
