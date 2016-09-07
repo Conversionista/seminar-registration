@@ -88,7 +88,7 @@ function submitForm(url){
 
 function getEntries(){
 	$.ajax({
-	    url: 'https://conversionista.se/gravityformsapi/forms/46/entries/?api_key=d5b81d3975&signature=7YGxRNlvkr4WmcOtvifDtp5%2BiVA%3D&expires=1501719968',
+	    url: 'https://conversionista.se/gravityformsapi/forms/77/entries/?api_key=d5b81d3975&signature=eqpHiO8DfP1O0RPU0iMkIL1IAl0%3D&expires=1473790440',
 		type: 'GET',
 	    crossDomain: true
 	})
@@ -210,7 +210,7 @@ $('#post').click(function () {
 
 	if (validateEmail( $(emailField).val() ) === true) {
 
-		var url = 'https://conversionista.se/gravityformsapi/forms/46/submissions/?api_key=d5b81d3975&signature=M94PyFc0%2BKkTdjvWfZVqf%2B2aLv0%3D&expires=1501715997';
+		var url = 'https://conversionista.se/gravityformsapi/forms/77/submissions/?api_key=d5b81d3975&signature=l%2BdmVm9LUMHi4kXvm3qKVpZpvxc%3D&expires=1473790411';
     	submitForm( url );
 
 	} else {
